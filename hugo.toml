@@ -1,8 +1,12 @@
    baseURL = "https://mia-za.github.io/miabdulla/"
    languageCode = "en-us"
-   title = "Your Name | AI & Tech Consulting"
-   theme = "PaperMod"
-
+   title = "MIA Abdulla | AI & Tech Consulting"
+   theme = "ananke"
+   
+   # THESE TWO LINES ARE CRITICAL FOR SUBDIRECTORIES
+   relativeURLs = true
+   canonifyURLs = true
+   
    [params]
      env = "production"
      description = "Astute business leader optimizing bottom lines through AI and technology."
@@ -10,12 +14,12 @@
      ShowShareButtons = false
      ShowPostNavLinks = false
      ShowBreadCrumbs = false
-     ShowCodeCopyButtons = true
-
-   [params.homeInfoParams]
-     Title = "Optimizing Bottom Lines Through AI & Technology"
-     Content = "I help organizations and boutique consultancies bridge the gap between legacy systems and modern AI infrastructure. Specializing in remote leadership, fractional consulting, and scalable data solutions across GCC, Europe, and South Africa."
-
+     defaultTheme = "auto"
+   
+     [params.homeInfoParams]
+       Title = "Optimizing Bottom Lines Through AI & Technology"
+       Content = "I help organizations and boutique consultancies bridge the gap between legacy systems and modern AI infrastructure. Specializing in remote leadership, fractional consulting, and scalable data solutions across GCC, Europe, and South Africa."
+   
    [[menu.main]]
      name = "Consulting Offerings"
      url = "/offerings/"
