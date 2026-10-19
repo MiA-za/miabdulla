@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MI Abdulla | Executive AI & Technology Consulting</title>
+    <title>Mohamed Iqbal Abdulla | C-Suite Executive & Strategic Advisor</title>
     <style>
         :root {
-            --bg-primary: #0f172a;
-            --bg-secondary: #1e293b;
-            --text-primary: #f8fafc;
+            --bg-primary: #0b1120;
+            --bg-secondary: #151e32;
+            --text-primary: #f1f5f9;
             --text-secondary: #94a3b8;
             --accent: #38bdf8;
-            --border: #334155;
+            --border: #1e293b;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
@@ -21,41 +21,47 @@
             line-height: 1.7;
             -webkit-font-smoothing: antialiased;
         }
-        .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 2rem; }
         
-        /* Header */
-        header { text-align: center; padding: 6rem 0 4rem; border-bottom: 1px solid var(--border); }
-        h1 { font-size: 2.8rem; font-weight: 300; letter-spacing: -0.02em; margin-bottom: 1rem; }
-        .subtitle { font-size: 1.25rem; color: var(--accent); font-weight: 500; margin-bottom: 1.5rem; }
-        .hero-text { max-width: 700px; margin: 0 auto 2.5rem; color: var(--text-secondary); font-size: 1.1rem; }
+        /* Header with subtle background image */
+        header { 
+            text-align: center; 
+            padding: 6rem 0 4rem; 
+            border-bottom: 1px solid var(--border);
+            background: linear-gradient(rgba(11, 17, 32, 0.9), rgba(11, 17, 32, 0.95)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2070') center/cover no-repeat;
+        }
+        h1 { font-size: 3rem; font-weight: 300; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+        .subtitle { font-size: 1.2rem; color: var(--accent); font-weight: 500; margin-bottom: 1.5rem; letter-spacing: 0.05em; text-transform: uppercase; }
+        .hero-text { max-width: 750px; margin: 0 auto 2.5rem; color: var(--text-secondary); font-size: 1.1rem; }
         
         /* Buttons */
+        .btn-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
         .btn {
             display: inline-block;
-            background-color: transparent;
-            color: var(--accent);
-            border: 1px solid var(--accent);
-            padding: 0.9rem 2rem;
+            padding: 1rem 2rem;
             text-decoration: none;
-            font-size: 0.95rem;
-            letter-spacing: 0.05em;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
             transition: all 0.3s ease;
+            border: 1px solid var(--accent);
         }
-        .btn:hover { background-color: var(--accent); color: var(--bg-primary); }
-        .btn-primary { background-color: var(--accent); color: var(--bg-primary); border: 1px solid var(--accent); }
+        .btn-primary { background-color: var(--accent); color: var(--bg-primary); font-weight: 600; }
         .btn-primary:hover { background-color: #0ea5e9; border-color: #0ea5e9; }
+        .btn-secondary { background-color: transparent; color: var(--accent); }
+        .btn-secondary:hover { background-color: rgba(56, 189, 248, 0.1); }
 
         /* Sections */
         section { padding: 5rem 0; border-bottom: 1px solid var(--border); }
         section:last-of-type { border-bottom: none; }
         h2 { 
-            font-size: 1.8rem; 
+            font-size: 1.5rem; 
             font-weight: 400; 
             margin-bottom: 3rem; 
             text-transform: uppercase; 
-            letter-spacing: 0.1em; 
+            letter-spacing: 0.15em; 
             color: var(--text-secondary);
+            text-align: center;
         }
         
         /* Cards */
@@ -65,12 +71,12 @@
             margin-bottom: 2rem;
             border-left: 3px solid var(--accent);
         }
-        .card h3 { font-size: 1.3rem; font-weight: 500; margin-bottom: 1rem; color: var(--text-primary); }
+        .card h3 { font-size: 1.25rem; font-weight: 500; margin-bottom: 1rem; color: var(--text-primary); }
         .card p { color: var(--text-secondary); margin-bottom: 1rem; }
         .card ul { list-style: none; padding-left: 0; }
         .card li { 
             color: var(--text-secondary); 
-            margin-bottom: 0.5rem; 
+            margin-bottom: 0.75rem; 
             padding-left: 1.5rem; 
             position: relative; 
         }
@@ -80,58 +86,106 @@
             left: 0;
             color: var(--accent);
         }
-        .label { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); font-weight: 600; }
+        .label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); font-weight: 600; display: block; margin-bottom: 0.25rem; }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        .stat-item h3 { font-size: 2.5rem; color: var(--accent); font-weight: 300; margin-bottom: 0.5rem; }
+        .stat-item p { color: var(--text-secondary); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; }
 
         /* Footer */
-        footer { text-align: center; padding: 4rem 0; color: var(--text-secondary); font-size: 0.9rem; }
+        footer { text-align: center; padding: 4rem 0; color: var(--text-secondary); font-size: 0.9rem; border-top: 1px solid var(--border); }
+        .contact-link { color: var(--accent); text-decoration: none; margin: 0 1rem; }
+        .contact-link:hover { text-decoration: underline; }
         
         /* Responsive */
         @media (max-width: 768px) {
             h1 { font-size: 2.2rem; }
             .card { padding: 1.5rem; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .btn-group { flex-direction: column; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Mia Abdulla</h1>
-            <p class="subtitle">Executive AI & Technology Consulting</p>
+            <h1>Mohamed Iqbal Abdulla</h1>
+            <p class="subtitle">C-Suite Executive & Strategic Advisor</p>
             <p class="hero-text">
-                Bridging the gap between legacy systems and modern AI infrastructure. 
-                I provide fractional leadership, remote team optimization, and scalable data solutions 
-                for organizations across the GCC, Europe, and South Africa.
+                26+ years of experience scaling retail, e-commerce, and supply chain operations across EMEA, APAC, and MENA. 
+                Proven track record managing $2.9B+ budgets, expanding retail footprints from 2 to 600+ sites, and implementing 
+                data-driven inventory systems that reduce stock-outs to &lt;1%. 
+                <br><br>
+                Available for full-time C-Suite leadership roles and select fractional consulting engagements.
             </p>
-            <a href="#contact" class="btn btn-primary">Request a Discovery Call</a>
+            <div class="btn-group">
+                <a href="#track-record" class="btn btn-primary">View Executive Track Record</a>
+                <a href="#contact" class="btn btn-secondary">Inquire About Fractional Advisory</a>
+            </div>
         </header>
 
-        <section id="offerings">
-            <h2>Consulting Offerings</h2>
+        <section id="impact">
+            <h2>Executive Impact</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>$2.9B+</h3>
+                    <p>Budget Managed</p>
+                </div>
+                <div class="stat-item">
+                    <h3>600+</h3>
+                    <p>Sites Scaled</p>
+                </div>
+                <div class="stat-item">
+                    <h3>117%</h3>
+                    <p>Profitability Increase</p>
+                </div>
+                <div class="stat-item">
+                    <h3>&lt;1%</h3>
+                    <p>Stock-Out Rate</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="capabilities">
+            <h2>Core Capabilities</h2>
             <div class="card">
-                <h3>30-Day AI Infrastructure Audit</h3>
-                <p>A rapid, comprehensive assessment of your current data pipelines and legacy systems.</p>
+                <h3>E-Commerce & Retail Scaling</h3>
+                <p>Expanding retail footprints and digital channels to capture omnichannel market share and drive Net Sales Value (NSV) growth.</p>
                 <ul>
-                    <li><span class="label">Deliverable:</span> Gap analysis and a prioritized roadmap for AI integration.</li>
-                    <li><span class="label">Business Impact:</span> Identifies immediate cost-saving opportunities and eliminates data silos.</li>
+                    <li><span class="label">Mechanism:</span> Strategic market penetration, exclusive brand rights negotiation, and operational restructuring.</li>
+                    <li><span class="label">Result:</span> Scaled operations from 2 to 600+ sites, increasing overall profitability by 117%.</li>
                 </ul>
             </div>
             <div class="card">
-                <h3>Bottom-Line Optimization Sprint</h3>
-                <p>A focused, 6-week engagement to implement generative AI tools into your core operational workflows.</p>
+                <h3>Supply Chain & Inventory Optimization</h3>
+                <p>Restructuring global sourcing, buying, and planning operations to maximize margin and eliminate supply chain bottlenecks.</p>
                 <ul>
-                    <li><span class="label">Deliverable:</span> Deployed automation scripts and team training on asynchronous, AI-assisted workflows.</li>
-                    <li><span class="label">Business Impact:</span> Typically yields a 20-30% reduction in manual reporting hours within the first quarter.</li>
+                    <li><span class="label">Mechanism:</span> Implementation of perpetual inventory systems, vendor consolidation, and data-driven demand forecasting (SAP S/4HANA, PowerBI).</li>
+                    <li><span class="label">Result:</span> Reduced closing-stock-to-sales ratio (CSSR) from 8 months to 3 months; decreased stock-outs to &lt;1%.</li>
                 </ul>
             </div>
         </section>
 
-        <section id="case-studies">
-            <h2>Selected Case Studies</h2>
+        <section id="track-record">
+            <h2>Selected Track Record</h2>
             <div class="card">
-                <h3>Supply Chain Data Optimization (GCC Region)</h3>
-                <p><span class="label">The Problem:</span> A mid-sized logistics firm struggled with 48-hour reporting delays due to fragmented legacy databases.</p>
-                <p><span class="label">The Action:</span> Led a distributed, remote team to implement an automated, AI-driven data aggregation pipeline.</p>
-                <p><span class="label">The Result:</span> Reduced reporting time to under 2 hours, saving an estimated $150K annually in operational overhead.</p>
+                <h3>Market Expansion & Profitability Scaling (Sub-Saharan Africa)</h3>
+                <p><span class="label">Context:</span> Managed a $2.9B+ USD budget with full P&L accountability, tasked with scaling a retail chain from 2 stores to a dominant market presence.</p>
+                <p><span class="label">Action:</span> Led cross-functional teams in strategic sourcing, exclusive brand rights negotiation, and operational restructuring across 600+ sites.</p>
+                <p><span class="label">Result:</span> Increased overall profitability by 117% and captured 48% additional market share through emerging market expansion.</p>
+            </div>
+            <div class="card">
+                <h3>Omnichannel Inventory Optimization (South Africa)</h3>
+                <p><span class="label">Context:</span> Organization struggling with an 8-month closing-stock-to-sales ratio and frequent stock-outs impacting revenue.</p>
+                <p><span class="label">Action:</span> Designed and launched a perpetual inventory system alongside seasonal financial planning and omnichannel scenarios (Click & Collect, Order from Store).</p>
+                <p><span class="label">Result:</span> Decreased stock-outs to &lt;1%, reduced CSSR to the 3-month industry standard, and increased quarterly profitability by 19%.</p>
             </div>
         </section>
 
@@ -139,20 +193,24 @@
             <h2>Engagement</h2>
             <div class="card" style="text-align: center; border-left: none; border-top: 3px solid var(--accent);">
                 <p style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 1.5rem;">
-                    I am currently accepting a limited number of fractional consulting engagements and strategic advisory roles.
+                    I am currently open to full-time C-Suite leadership roles (CEO, Head of E-Commerce, Chief Commercial Officer) and fractional strategic advisory positions globally (GCC, Europe, South Africa).
                 </p>
-                <p style="margin-bottom: 2rem;">
-                    If your organization is looking to optimize its bottom line through targeted AI integration, let us have a brief, no-obligation conversation.
+                <p style="margin-bottom: 2rem; color: var(--text-secondary);">
+                    If your organization requires executive leadership to optimize bottom-line performance through strategic retail and digital transformation, let us connect.
                 </p>
-                <a href="https://calendly.com" target="_blank" class="btn btn-primary">Schedule a 15-Minute Discovery Call</a>
-                <p style="margin-top: 2rem; font-size: 0.95rem;">
-                    Direct Inquiry: <a href="mailto:your.email@domain.com" style="color: var(--accent); text-decoration: none;">your.email@domain.com</a>
-                </p>
+                <a href="mailto:miabdulla72@gmail.com" class="btn btn-primary">Initiate a Confidential Conversation</a>
+                <div style="margin-top: 2.5rem; font-size: 0.95rem;">
+                    <a href="mailto:miabdulla72@gmail.com" class="contact-link">miabdulla72@gmail.com</a>
+                    <span style="color: var(--border);">|</span>
+                    <a href="tel:+27826927461" class="contact-link">+27 [0] 82 692 7461</a>
+                    <span style="color: var(--border);">|</span>
+                    <a href="https://linkedin.com/in/mohamed-iqbal-abdulla" target="_blank" class="contact-link">LinkedIn Profile</a>
+                </div>
             </div>
         </section>
 
         <footer>
-            <p>&copy; 2026 Mia Abdulla. All rights reserved.</p>
+            <p>&copy; 2026 Mohamed Iqbal Abdulla. All rights reserved.</p>
         </footer>
     </div>
 </body>
